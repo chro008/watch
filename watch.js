@@ -51,6 +51,7 @@ function Watch(obj, callback) {
                     path.push(prop);
                     t.callback(path, newVal);
                     arrayProto[prop].apply(a_array, arguments);
+                    t.observe(this, path);
                 },
                 enumerable: false,
                 configurable: true,
